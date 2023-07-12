@@ -6,4 +6,7 @@
     </style>
 
     <style name="Theme.Kiosk_BVTT" parent="Base.Theme.Kiosk_BVTT" />
+    <style name="Splash" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/anyconv_com__panner2</item>
+    </style>
 </resources>
