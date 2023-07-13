@@ -12,7 +12,7 @@ public class StartupOnBootUpReceiver extends BroadcastReceiver {
 //        Hàm tự khởi dộng khi chạy lại thiết bị
         Log.v("aaaaaaaaaa","aaaaaaaaaaaaa");
         if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
-            Intent intent2 = new Intent(context, MainActivity.class);
+            Intent intent2 = new Intent(context, ScreenTemp.class);
             intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent2);
         }

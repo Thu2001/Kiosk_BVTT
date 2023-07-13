@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <!--    cung cấp internet cho thiết bị-->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!--    cung cấp quyền truy cập hệ thống-->
+    <!-- cung cấp internet cho thiết bị -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- cung cấp quyền truy cập hệ thống -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -18,8 +18,10 @@
         android:theme="@style/Theme.Kiosk_BVTT"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/Splash"
+            android:name=".URL"
+            android:exported="false" />
+        <activity
+            android:name=".ScreenTemp"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,24 +29,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        hoạt động ban đầu của app -->
-        <service android:name=".MainActivity" android:label="My Service"
-            android:exported="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Splash"></activity> <!-- hoạt động ban đầu của app -->
+        <service
+            android:name=".ScreenTemp"
+            android:exported="true"
+            android:label="My Service">
             <intent-filter>
-                <action android:name=".MainActivity" />
+                <action android:name=".ScreenTemp" />
             </intent-filter>
-        </service>
-        <!--        hoạt động khi khởi động lại ứng đụng chạy trực tiếp vào app-->
-        <receiver android:name=".StartupOnBootUpReceiver"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED"
-            android:exported="true">
+        </service> <!-- hoạt động khi khởi động lại ứng đụng chạy trực tiếp vào app -->
+        <receiver
+            android:name=".StartupOnBootUpReceiver"
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <!--                <action android:name="android.intent.action.QUICKBOOT_POWERON" />-->
-                <!--                <category android:name="android.intent.category.DEFAULT" />-->
+                <!-- <action android:name="android.intent.action.QUICKBOOT_POWERON" /> -->
+                <!-- <category android:name="android.intent.category.DEFAULT" /> -->
             </intent-filter>
         </receiver>
-
     </application>
 
 </manifest>
