@@ -26,6 +26,7 @@ public class URL extends AppCompatActivity {
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //thay đổi link khi chuy cập "http://" hoặc "htttps://"
                 String a="https://"+url.getText().toString();
 
                 Intent intent2 = new Intent(URL.this, MainActivity.class);

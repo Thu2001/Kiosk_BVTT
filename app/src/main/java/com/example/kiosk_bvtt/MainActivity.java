@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 //        CustomWebClient customWebClient = new CustomWebClient();
 //        boolean a = customWebClient.shouldOverrideUrlLoading(webview,"https://www.youtube.com000/");
         if(a==null || a.equals("")) {
+            //link mặc định đầu vào web
             url = "https://www.youtube.com/watch?v=";
         } else {
             url = a;
